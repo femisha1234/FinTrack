@@ -1,0 +1,63 @@
+.content {
+    flex-grow: 1;
+    padding: 20px;
+}
+.card {
+    margin: 15px;
+}
+.chart-container {
+  height: 200px; /* Reduce height */
+  width: 100%;  /* Adjust width as needed */
+  max-width: 400px; /* Limit maximum width */
+  margin: auto;
+}
+
+.quick-actions button {
+    margin: 5px;
+}
+.sidebar{
+position: relative;
+}
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    margin-left: 250px; /* Adjust this according to the width of your sidebar */
+    padding: 20px;
+    background-color: #eafaf7;
+    width: 110%;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+
+  }
+  
+  .sidebar {
+    position: fixed; 
+    left: 0;
+    top: 0;
+    width: 250px; 
+    height: 100vh; 
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); 
+    padding-top: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Content area */
+  .content {
+    flex-grow: 1;
+    padding: 20px;
+    
+  }
+  
+  /* Cards inside the dashboard */
+  .card {
+    margin: 15px;
+  }
+  
+  .chart-container {
+    height: 300px;
+    margin: 20px 0;
+  }
+  
+  .quick-actions button {
+    margin: 5px;
+  }

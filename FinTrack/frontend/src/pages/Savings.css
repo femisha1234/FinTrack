@@ -1,0 +1,91 @@
+.savings-goals {
+    padding: 20px;
+    background-color: #eafaf7;
+    margin-left: 350px;
+    width: 1000px;
+  }
+  
+  .goal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 300px;
+  }
+  
+  input {
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  button {
+    background-color: #1C3F3A;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  button:hover {
+    background-color: #145A52;
+  }
+  
+  .goals-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .goal-card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .goal-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #ccc;
+    margin-top: 10px;
+    border-radius: 5px;
+  }
+  
+  .progress-bar div {
+    height: 100%;
+    background-color: #1C3F3A;
+    border-radius: 5px;
+  }
+  
+  .goal-history {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .goal-chart {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .chart-container {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  .delete-btn{
+    margin-left: 20px;
+    background-color: #dc3545;;
+  }

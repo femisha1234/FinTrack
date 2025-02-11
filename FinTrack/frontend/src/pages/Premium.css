@@ -1,0 +1,25 @@
+.premium-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    margin-left: 350px;
+  }
+  
+  .premium-container ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .premium-container button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .premium-container button:hover {
+    background-color: #45a049;
+  }

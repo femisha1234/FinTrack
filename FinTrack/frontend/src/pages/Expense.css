@@ -1,0 +1,138 @@
+/* Income.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f9f9f9;
+  }
+  
+  .expense-container {
+    padding: 20px;
+    background-color: #eafaf7;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+    margin-left: 350px;
+    width: 100%;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: black;
+  }
+  
+  #expense-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    color: black;
+  }
+  
+  input,
+  select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    color: black;
+  }
+  
+  button.add-expense-button {
+    grid-column: span 2;
+    background-color: #1c3f3a;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button.add-expense-button:hover {
+    background-color: #145a52;
+  }
+  
+  .expense-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .expense-table th,
+  .expense-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+    background-color: white;
+  }
+  
+  .expense-table th {
+    background-color: #1c3f3a;
+    color: white;
+  }
+  
+  .expense-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .action-buttons button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .action-buttons .edit {
+    background-color: #ffc107;
+    color: white;
+  }
+  
+.edit:hover {
+    background-color: #e0a800;
+  }
+  
+ .delete {
+    background-color: #dc3545;
+    color: white;
+  }
+.delete:hover {
+    background-color: #c82333;
+  }
+  
+  .total {
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 20px;
+    text-align: right;
+    color: #333;
+  }
+  
+  .filter {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .filter label {
+    font-weight: bold;
+  }
+  
+  .filter select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+.edit{
+  background-color: #e0a800;
+
+}
