@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter as Routes, Route, Navigate } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import Dashboard from "./pages/Dashboard";
 import About from "./pages/About";
@@ -28,7 +28,6 @@ const App = () => {
     <div className="App">
       {/* Wrap the entire app with AuthProvider */}
       <AuthProvider>
-        <Router>
         <Routes>
           {!token ? (
             <>
@@ -56,7 +55,6 @@ const App = () => {
             </>
           )}
         </Routes>
-        </Router>
       </AuthProvider>
     </div>
   );
