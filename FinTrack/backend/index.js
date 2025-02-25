@@ -8,7 +8,7 @@ connectDB();
 
 app.use(express.json());
 
-const allowedOrigins = ['https://fin-track-rose.vercel.app'];
+const allowedOrigins = ['https://fin-track-3stn898y4-femisha1234s-projects.vercel.app'];
 
 app.use(
   cors({
