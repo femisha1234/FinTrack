@@ -8,7 +8,7 @@ connectDB();
 
 app.use(express.json());
 
-const allowedOrigins = ['http://localhost:3002', 'http://localhost:5173'];
+const allowedOrigins = ['https://fin-track-rose.vercel.app'];
 
 app.use(
   cors({
