@@ -19,7 +19,7 @@ const Login = () => {
       console.log('Sending payload:', { email, password });
 
       const response = await axios.post(
-        'http://192.168.1.52:5000/admin/login',
+        'http://localhost:5000/admin/login',
         { email, password },
         {
           headers: {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Admin.css';
-import Sidebar from '../Components/Sidebar';
+import Sidebar from '../components/Sidebar';
 import { useNavigate } from 'react-router-dom'; 
 
 function Admin() {
@@ -14,7 +14,7 @@ function Admin() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get('http://192.168.1.52:5000/auth/users');
+        const response = await axios.get('http://localhost:5000/auth/users');
         console.log('Fetched users:', response.data); 
         setUsers(response.data);
         setLoading(false); 
@@ -28,16 +28,7 @@ function Admin() {
     fetchUsers();
   }, []);
 
-  // Handle user deletion
-  const handleDelete = async (id) => {
-    try {
-      await axios.delete(`http://192.168.1.52:5000/auth/users/${id}`); 
-      setUsers(users.filter((user) => user._id !== id)); 
-    } catch (error) {
-      console.error('Error deleting user:', error);
-    }
-  };
-
+ 
   // Handle logout
   const handleLogout = () => {
     localStorage.removeItem('authToken'); 

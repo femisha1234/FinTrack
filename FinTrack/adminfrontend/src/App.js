@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Admin from "./pages/Admin";
 import Usermanagement from "./pages/Usermanagement";
 import Analytics from "./pages/Analytics";
-import Sidebar from "./Components/Sidebar";
+import Sidebar from './components/Sidebar';
 import Settings from "./pages/Settings";
 import Login from "./pages/Login";
 

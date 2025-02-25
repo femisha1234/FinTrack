@@ -1,4 +1,3 @@
-
 /* Settings.css */
 
 body {
@@ -97,6 +96,44 @@ button.danger:hover {
     background-color: #eafaf7;
     color: black;
 }
+/* Light theme */
+
+
+body.light h1, body.light h2, body.light p {
+    color: black;
+}
+
+body.light  {
+    background-color: white;
+    color: black;
+}
+body.dark{
+    background-color: #1C3F3A;
+
+}
+
+
+body.dark h1, body.dark h2, body.dark p {
+    color: black;  
+}
+
+body.dark #edit {
+    background-color: white;  
+    color: black; 
+}
+
+body.dark input, body.dark select{
+    background-color: white;  
+    color: black;  
+}
+body.dark label{
+    color: white;
+}
+
+body.dark .settings-page {
+    background-color: #1C3F3A;
+    color: white;
+}
 
 .settings-page.dark {
     background-color: #1C3F3A;
@@ -104,7 +141,7 @@ button.danger:hover {
 }
 
 .settings-page.dark button {
-    background-color: #444;
+    background-color: black;
     color: white;
 }
 

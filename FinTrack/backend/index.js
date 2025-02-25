@@ -8,7 +8,7 @@ connectDB();
 
 app.use(express.json());
 
-const allowedOrigins = ['http://localhost:3000', 'http://localhost:5173'];
+const allowedOrigins = ['http://localhost:3002', 'http://localhost:5173'];
 
 app.use(
   cors({
@@ -34,4 +34,4 @@ app.use("/api/payment", require('./routes/paymentRoutes'));
 app.get("/", (req, res) => res.send("FinTrack Backend Running..."));
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on http://192.168.1.52:${PORT}`));
+app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));

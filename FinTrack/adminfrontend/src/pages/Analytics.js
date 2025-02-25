@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Card, CardContent, Typography, Grid, TextField, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, CircularProgress, Alert } from '@mui/material';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, PieChart, Pie } from 'recharts';
 import './Analytics.css';
-import Sidebar from '../Components/Sidebar';
+import Sidebar from '../components/Sidebar';
 
 const Analytics = () => {
   const [analyticsData, setAnalyticsData] = useState({
@@ -31,7 +31,7 @@ const Analytics = () => {
 
     const fetchAnalytics = async () => {
       try {
-        const response = await axios.get('http://192.168.1.52:5000/admin/analytics', {
+        const response = await axios.get('http://localhost:5000/admin/analytics', {
           headers: { Authorization: `Bearer ${token}` },
           params: { start: dateRange.start, end: dateRange.end },
         });
@@ -124,7 +124,7 @@ const Analytics = () => {
             <Card className="summary-card">
               <CardContent>
                 <Typography color="textSecondary">Total Revenue</Typography>
-                <Typography variant="h5">${analyticsData.totalRevenue}</Typography>
+                <Typography variant="h5">₹{analyticsData.totalRevenue}</Typography>
               </CardContent>
             </Card>
           </Grid>
@@ -132,7 +132,7 @@ const Analytics = () => {
             <Card>
               <CardContent>
                 <Typography color="textSecondary">Total Expenses</Typography>
-                <Typography variant="h5">${analyticsData.totalExpense}</Typography>
+                <Typography variant="h5">₹{analyticsData.totalExpense}</Typography>
               </CardContent>
             </Card>
           </Grid>
@@ -140,7 +140,7 @@ const Analytics = () => {
             <Card>
               <CardContent>
                 <Typography color="textSecondary">Net Profit</Typography>
-                <Typography variant="h5">${analyticsData.netProfit}</Typography>
+                <Typography variant="h5">₹{analyticsData.netProfit}</Typography>
               </CardContent>
             </Card>
           </Grid>
@@ -209,7 +209,7 @@ const Analytics = () => {
                     <TableRow key={row.id}>
                       <TableCell>{row.date}</TableCell>
                       <TableCell>{row.source}</TableCell>
-                      <TableCell>${row.amount}</TableCell>
+                      <TableCell>₹{row.amount}</TableCell>
                       <TableCell>{row.type}</TableCell>
                     </TableRow>
                   ))}

@@ -1,12 +1,12 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const Admin = require('../models/Admin');
-const Transaction=require('../models/Transaction')
+const Transaction = require('../models/Transaction');
 
 // Register a new admin
 exports.registerAdmin = async (req, res) => {
     try {
-        const { email, password  } = req.body;
+        const { email, password } = req.body;
 
         // Check if admin already exists
         let admin = await Admin.findOne({ email });
@@ -14,18 +14,20 @@ exports.registerAdmin = async (req, res) => {
             return res.status(400).json({ msg: 'Admin already exists' });
         }
 
-        // Create new admin
+        // Hash password before saving
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(password, salt);
+
+        // Create new admin with hashed password
         admin = new Admin({
             email,
-            password,
-            
+            password: hashedPassword,
         });
 
-        // Hash password before saving
         await admin.save();
 
         // Generate JWT token
-        const token = jwt.sign({ admin: { id: admin._id } }, process.env.JWT_SECRET, { expiresIn: '1h' });
+        const token = jwt.sign({ id: admin._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
 
         res.status(201).json({
             msg: 'Admin registered successfully',
@@ -49,14 +51,14 @@ exports.loginAdmin = async (req, res) => {
             return res.status(400).json({ msg: 'Invalid credentials' });
         }
 
-        // Compare password
-        const isMatch = await admin.comparePassword(password);
+        // Compare password using bcrypt
+        const isMatch = await bcrypt.compare(password, admin.password);
         if (!isMatch) {
             return res.status(400).json({ msg: 'Invalid credentials' });
         }
 
         // Generate JWT token
-        const token = jwt.sign({ admin: { id: admin._id } }, process.env.JWT_SECRET, { expiresIn: '1h' });
+        const token = jwt.sign({ id: admin._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
 
         res.json({
             token,
@@ -82,6 +84,8 @@ exports.getCurrentAdmin = async (req, res) => {
         res.status(500).json({ msg: 'Server error' });
     }
 };
+
+// Get analytics data
 exports.getAnalytics = async (req, res) => {
     try {
         // Aggregate total income

@@ -1,6 +1,6 @@
 const express = require('express');
 const { registerAdmin, loginAdmin, getCurrentAdmin , getAnalytics } = require('../controllers/adminController');
-const authMiddleware = require('../middleware/authMiddleware'); 
+const authMiddleware = require('../middleware/adminauthamiddleware'); 
 const router = express.Router();
 
 // Register a new admin

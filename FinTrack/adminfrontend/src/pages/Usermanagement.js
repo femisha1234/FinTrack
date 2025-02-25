@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Usermanagement.css';
-import Sidebar from '../Components/Sidebar';
+import Sidebar from '../components/Sidebar';
 
 function Usermanagement() {
   const [users, setUsers] = useState([]);
@@ -16,7 +16,7 @@ function Usermanagement() {
   // Fetch users from the backend
   const fetchUsers = async () => {
     try {
-      const response = await fetch('http://192.168.1.52:5000/auth/users');
+      const response = await fetch('http://localhost:5000/auth/users');
       const data = await response.json();
       console.log('Fetched Users:', data);
       if (Array.isArray(data)) {
@@ -43,7 +43,7 @@ function Usermanagement() {
   const handleActivate = async (id) => {
     try {
       console.log('Activating user with ID:', id);
-      await axios.put(`http://192.168.1.52:5000/auth/users/${id}/activate`);
+      await axios.put(`http://localhost:5000/auth/users/${id}/activate`);
       setUsers(users.map((user) => (user._id === id ? { ...user, status: 'Active' } : user)));
     } catch (error) {
       console.error('Error activating user:', error.response?.data || error.message);
@@ -55,7 +55,7 @@ function Usermanagement() {
   const handleDeactivate = async (id) => {
     try {
       console.log('Deactivating user with ID:', id);
-      await axios.put(`http://192.168.1.52:5000/auth/users/${id}/deactivate`);
+      await axios.put(`http://localhost:5000/auth/users/${id}/deactivate`);
       setUsers(users.map((user) => (user._id === id ? { ...user, status: 'Inactive' } : user)));
     } catch (error) {
       console.error('Error deactivating user:', error.response?.data || error.message);
@@ -67,7 +67,7 @@ function Usermanagement() {
   const handleBlock = async (id) => {
     try {
       console.log('Blocking user with ID:', id);
-      await axios.put(`http://192.168.1.52:5000/auth/users/${id}/block`);
+      await axios.put(`http://localhost:5000/auth/users/${id}/block`);
       setUsers(users.map((user) => (user._id === id ? { ...user, status: 'Blocked' } : user)));
     } catch (error) {
       console.error('Error blocking user:', error.response?.data || error.message);
